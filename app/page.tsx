@@ -77,8 +77,8 @@ export default function Home() {
 
     async function fetchUsers() {
       try {
-        const numberOfImages = prompt("how many images do you want ?")  
-        const num = prompt("how many images do you want to be visible ?")
+        const numberOfImages = prompt("how many images do you want to fetch ?")  
+        const num = prompt(`how many images do you want to be visible ? keep it less than ${numberOfImages}`)
         if ( num !=  null) {
           const numberOfImagesToBeShown = parseInt(num, 10);
           setMaxVisible(numberOfImagesToBeShown)
@@ -103,7 +103,7 @@ export default function Home() {
       {usersImage ? (
           <>
             {usersImage.slice(0, maxVisible).map((avatar, index) => (
-              <div
+          <div
             key={avatar}
             className={`relative inline-block rounded-full border-2 border-white ${
               index === 0 ? '' : '-ml-3'
