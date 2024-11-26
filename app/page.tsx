@@ -99,13 +99,13 @@ export default function Home() {
 
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <div className="relative flex justify-center items-center -space-x-4">
+      <div className="relative flex justify-center items-center -space-x-4 ">
       {usersImage ? (
           <>
             {usersImage.slice(0, maxVisible).map((avatar, index) => (
           <div
             key={avatar}
-            className={`relative inline-block rounded-full border-2 border-white ${
+            className={`relative inline-block rounded-full border-4 p-2 border-black bg-black ${
               index === 0 ? '' : '-ml-3'
             }`}
             style={{
@@ -127,7 +127,7 @@ export default function Home() {
             ))}
             {usersImage.length - maxVisible > 0 && (
               <div 
-                className="relative flex h-10 w-10 items-center justify-center rounded-full border-2 border-white bg-gray-100"
+                className="relative flex h-10 w-10 items-center justify-center rounded-full border-2 border-black bg-gray-100"
                 style={{ marginLeft: '-0.75rem', zIndex: 10 }}
               >
                 <span className="text-sm font-medium text-gray-600">
