@@ -64,7 +64,7 @@ interface User {
   userAgent: string;
   ein: string;
   password: string;
-  imageUrl: string; // you can rename to image or imageUrl depending on your requirement
+  imageUrl: string; 
 }
 
 export default function Home() {
@@ -86,9 +86,9 @@ export default function Home() {
         const response = await fetch(`https://dummyjson.com/users?limit=${numberOfImages}`);
         const users = await response.json();
         console.log(users.users)
-        setUsersImage(users.users.map((user: User) => user.image)); // Update the state with all image URLs
+        setUsersImage(users.users.map((user: User) => user.image)); 
       } catch (error) {
-        console.error("Error fetching user data:", error); // Handle errors
+        console.error("Error fetching user data:", error);
       }
     }
 
