@@ -109,7 +109,7 @@ export default function Home() {
               index === 0 ? '' : '-ml-3'
             }`}
             style={{
-              zIndex: maxVisible - index,
+              zIndex: index - maxVisible,
               width: '40px',
               height: '40px',
             }}
