@@ -42,7 +42,7 @@ export default function Home() {
                 style={{ marginLeft: index > 0 ? '-0.75rem' : '0', zIndex: maxVisible - index }}
               >
                 <div className="absolute inset-0 overflow-hidden rounded-full">
-                  <img
+                  <Image
                     src={avatar}
                     alt={`User ${index + 1}`}
                     className="h-full w-full object-cover"
