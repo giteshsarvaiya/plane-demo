@@ -37,18 +37,26 @@ export default function Home() {
           <>
             {usersImage.slice(0, maxVisible).map((avatar, index) => (
               <div
-                key={avatar}
-                className="relative inline-block h-10 w-10 rounded-full border-2 border-white"
-                style={{ marginLeft: index > 0 ? '-0.75rem' : '0', zIndex: maxVisible - index }}
-              >
-                <div className="absolute inset-0 overflow-hidden rounded-full">
-                  <img
-                    src={avatar}
-                    alt={`User ${index + 1}`}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-              </div>
+            key={avatar}
+            className={`relative inline-block rounded-full border-2 border-white ${
+              index === 0 ? '' : '-ml-3'
+            }`}
+            style={{
+              zIndex: maxVisible - index,
+              width: '40px',
+              height: '40px',
+            }}
+          >
+            <div className="absolute inset-0 rounded-full overflow-hidden">
+              <Image
+                src={avatar}
+                alt={`User ${index + 1}`}
+                width={40}
+                height={40}
+                className="object-cover"
+              />
+            </div>
+          </div>
             ))}
             {usersImage.length - maxVisible > 0 && (
               <div 
