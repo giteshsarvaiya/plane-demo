@@ -78,7 +78,7 @@ export default function Home() {
     async function fetchUsers() {
       try {
         const numberOfImages = prompt("how many images do you want to fetch ?")  
-        const num = prompt(`how many images do you want to be visible ? keep it less than ${numberOfImages}`)
+        const num = prompt(`how many images do you want to be visible ? this number should be less than ${numberOfImages}`)
         if ( num !=  null) {
           const numberOfImagesToBeShown = parseInt(num, 10);
           setMaxVisible(numberOfImagesToBeShown)
