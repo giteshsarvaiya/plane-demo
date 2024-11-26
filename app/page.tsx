@@ -2,7 +2,74 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
+interface Address {
+  address: string;
+  city: string;
+  state: string;
+  stateCode: string;
+  postalCode: string;
+}
+
+interface Bank {
+  cardExpire: string;
+  cardNumber: string;
+  cardType: string;
+  currency: string;
+  iban: string;
+}
+
+interface Company {
+  department: string;
+  name: string;
+  title: string;
+  address: Address;
+}
+
+interface Crypto {
+  coin: string;
+  wallet: string;
+  network: string;
+}
+
+interface Hair {
+  color: string;
+  type: string;
+}
+
+interface User {
+  id: number;
+  firstName: string;
+  lastName: string;
+  maidenName: string;
+  username: string;
+  email: string;
+  gender: string;
+  birthDate: string;
+  bloodGroup: string;
+  eyeColor: string;
+  height: number;
+  weight: number;
+  role: string;
+  address: Address;
+  company: Company;
+  bank: Bank;
+  crypto: Crypto;
+  hair: Hair;
+  phone: string;
+  ssn: string;
+  university: string;
+  image: string;
+  ip: string;
+  macAddress: string;
+  userAgent: string;
+  ein: string;
+  password: string;
+  imageUrl: string; // you can rename to image or imageUrl depending on your requirement
+}
+
 export default function Home() {
+
+
   const [usersImage, setUsersImage] = useState<string[] | null>(null);
   const [maxVisible, setMaxVisible] = useState(0);
 
@@ -18,8 +85,8 @@ export default function Home() {
         }
         const response = await fetch(`https://dummyjson.com/users?limit=${numberOfImages}`);
         const users = await response.json();
-   
-        setUsersImage(users.users.map((user: any) => user.image)); // Update the state with all image URLs
+        console.log(users.users)
+        setUsersImage(users.users.map((user: User) => user.image)); // Update the state with all image URLs
       } catch (error) {
         console.error("Error fetching user data:", error); // Handle errors
       }
