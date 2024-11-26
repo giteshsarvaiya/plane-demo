@@ -128,7 +128,7 @@ export default function Home() {
             {usersImage.length - maxVisible > 0 && (
               <div 
                 className="relative flex h-10 w-10 items-center justify-center rounded-full border-2 border-white bg-gray-100"
-                style={{ marginLeft: '-0.75rem', zIndex: 0 }}
+                style={{ marginLeft: '-0.75rem', zIndex: 10 }}
               >
                 <span className="text-sm font-medium text-gray-600">
                   +{usersImage.length - maxVisible}
